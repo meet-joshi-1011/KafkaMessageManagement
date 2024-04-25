@@ -16,6 +16,6 @@ public class MessageProduceScheduler {
     @Scheduled(cron = "*/2 * * * * *")
     public void produceMessage(){
         kafkaUtil.sendProductUpdateMessage("Test-topic", String.valueOf(Math.random()),
-                String.valueOf(Map.of(Math.random(), Math.random())));
+                Map.of(Math.random(), Math.random()).toString());
     }
 }
